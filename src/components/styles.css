@@ -1,0 +1,21 @@
+.product-header {
+  display: flex;
+  justify-content: space-between;
+}
+.product-header-first {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}
+.product-header-first div {
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 70%;
+  justify-content: flex-end;
+  display: flex;
+}
+.product-header-last {
+  display: flex;
+  width: 13%;
+  justify-content: space-between;
+}
