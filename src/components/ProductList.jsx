@@ -87,9 +87,8 @@ const ProductList = () => {
 
   return (
     <>
+      <Header goToCheckout={goToCheckout} />
       <div className="product-list">
-        <Header goToCheckout={goToCheckout} />
-
         <h5>
           Fragrances that evoke emotions, spark memories and inspire the senses
         </h5>
@@ -121,28 +120,30 @@ const ProductList = () => {
         <div>
           <h4>Our Vision</h4>
           <span>
-            Fragrance Fusion is dedicated to providing an exceptional perfume
-            shopping experience, offering a curated selection of premium
-            fragrances from around the world. We aim to inspire our customers to
-            discover new scents and explore their personal style
+            Fragrance Fusion is dedicated to providing <br />
+            an exceptional perfume shopping <br />
+            experience, offering a curated selection of <br />
+            premium fragrances from around the world. <br />
+            We aim to inspire our customers to discover <br />
+            new scents and explore their personal style
           </span>
         </div>
         <div>
           <h4>Information</h4>
-          <h6>About Us</h6>
-          <h6>Contact Us</h6>
+          <span>About Us</span>
+          <span>Contact Us</span>
         </div>
         <div>
           <h4>Our Services</h4>
-          <h6>Shipping & Delivery</h6>
-          <h6>Fragrance Recommendation</h6>
+          <span>Shipping & Delivery</span>
+          <span>Fragrance Recommendation</span>
         </div>
         <div>
           <h4>My Account</h4>
-          <h6>My Profile</h6>
-          <h6>My Cart</h6>
-          <h6>Checkout</h6>
-          <h6>Track Order</h6>
+          <span>My Profile</span>
+          <span>My Cart</span>
+          <span>Checkout</span>
+          <span>Track Order</span>
         </div>
       </div>
     </>
