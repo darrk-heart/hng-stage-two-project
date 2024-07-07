@@ -25,7 +25,7 @@ import chloe from "../../assets/products/chloe.png";
 
 import "./ProductList.css";
 
-const Header = ({ goToCheckout }) => (
+const Header = ({ goToCartPage }) => (
   <div className="productheader">
     <div className="product-header">
       <div className="product-header-first">
@@ -41,7 +41,7 @@ const Header = ({ goToCheckout }) => (
         <GiShoppingCart
           className="icons"
           style={{ cursor: "pointer" }}
-          onClick={goToCheckout}
+          onClick={goToCartPage}
         />
       </div>
     </div>
@@ -111,8 +111,8 @@ const ProductItem = ({ name, price, pic }) => {
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const goToCheckout = () => {
-    navigate("/checkout");
+  const goToCartPage = () => {
+    navigate("/cartpage");
   };
 
   const products = [
@@ -136,7 +136,7 @@ const ProductList = () => {
 
   return (
     <>
-      <Header goToCheckout={goToCheckout} />
+      <Header goToCartPage={goToCartPage} />
       <div className="product-list">
         <h5>
           Fragrances that{" "}

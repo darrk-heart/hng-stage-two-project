@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProductList from "./components/ProductList/ProductList";
-import Checkout from "./components/CartPage/CartPage";
+import CartPage from "./components/CartPage/CartPage";
 import Payment from "./components/Payment";
 import "./App.css";
 
@@ -10,8 +10,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/productlist" element={<ProductList />} />
+          <Route path="/cartpage" element={<CartPage />} />
           <Route path="/payment" element={<Payment />} />
         </Routes>
       </div>

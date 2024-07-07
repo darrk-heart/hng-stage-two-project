@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { GrLinkPrevious } from "react-icons/gr";
 import { GrLinkNext } from "react-icons/gr";
 import { IoClose } from "react-icons/io5";
@@ -8,7 +9,11 @@ import coco from "../../assets/products/coco.png";
 import creed from "../../assets/products/creed.png";
 import red from "../../assets/products/red.png";
 
-function Checkout() {
+function Checkout({}) {
+  const navigate = useNavigate();
+  const goToProductList = () => {
+    navigate("/productlist");
+  };
   const [quantities, setQuantities] = useState({
     coco: 1,
     red: 1,
@@ -32,7 +37,7 @@ function Checkout() {
   return (
     <div>
       <div className="cartpage-header">
-        <GrLinkPrevious />
+        <GrLinkPrevious onClick={goToProductList} />
         <span>Shopping Bag</span>
       </div>
       <div style={{ marginTop: "40px" }}>
