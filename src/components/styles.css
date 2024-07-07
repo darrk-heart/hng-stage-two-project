@@ -56,11 +56,11 @@ h5 {
   justify-content: space-between;
 }
 .item {
-  flex: 1 1 calc(25% - 10px); /* Four items per row on mobile */
+  flex: 1 1 calc(25% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: calc(25% - 10px); /* Four items per row on mobile */
+  max-width: calc(25% - 10px);
   margin-bottom: 20px;
 }
 
@@ -146,5 +146,15 @@ h5 {
   }
   .perfumes {
     border-bottom: none;
+  }
+  .item {
+    flex: 1 1 calc(16.67% - 10px);
+    max-width: calc(16.67% - 10px);
+  }
+}
+@media (min-width: 1025px) {
+  .item {
+    flex: 1 1 calc(12.5% - 10px);
+    max-width: calc(12.5% - 10px);
   }
 }
