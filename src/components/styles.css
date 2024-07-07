@@ -92,6 +92,13 @@ h5 {
   height: 100px;
   border-radius: 10px;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pic-background img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .item-operations {
@@ -125,7 +132,6 @@ h5 {
   color: white;
   border-radius: 10px;
   font-weight: 400;
-  padding: 2px;
 }
 
 .product-footer {
@@ -230,7 +236,7 @@ h5 {
   }
   .pic-background {
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .product-name {
     font-size: 16px;

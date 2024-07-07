@@ -124,7 +124,7 @@ const ProductList = () => {
     { name: "Red diamond", price: "#68,000", pic: red },
     { name: "Givenchy-Eau de moiselle", price: "#120,000", pic: givenchy },
     { name: "D&G", price: "#75,000", pic: dng },
-    { name: "Coco mademoiselle", price: "#95,000", pic: coco },
+    { name: "Coco mademoiselle", price: "#95,000", pic: cocomadem },
     { name: "Ice cool vigor-Eau de parfum", price: "#70,000", pic: ice },
   ];
 
