@@ -1,3 +1,4 @@
+/* product list page */
 .product-header {
   display: flex;
   justify-content: space-between;
@@ -18,4 +19,30 @@
   display: flex;
   width: 13%;
   justify-content: space-between;
+}
+h5 {
+  text-align: center;
+}
+.product-heading {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+.perfumes {
+  border-bottom: 2px solid red;
+}
+.products {
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.pic-background {
+  background-color: red;
+  width: 25%;
+  height: 100px;
+  border-radius: 10px;
 }

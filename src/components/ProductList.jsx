@@ -28,6 +28,33 @@ function ProductList() {
           <GiShoppingCart onClick={goToCheckout} />
         </div>
       </div>
+
+      <h5>
+        Fragrances that evoke emotions, spark memories and inspire the senses
+      </h5>
+
+      <ul className="product-heading">
+        <li>All Categories</li>
+        <li className="perfumes">Perfumes</li>
+        <li>Body Spray</li>
+        <li>Deodorants</li>
+      </ul>
+
+      <div className="products">
+        <div className="item">
+          <div className="pic-background"></div>
+          <span>Coco Noir Chanel</span>
+          <span>#65,000</span>
+          <div>
+            <div>
+              <span>-</span>
+              <span>1</span>
+              <span>+</span>
+            </div>
+            <div>Add to cart</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
