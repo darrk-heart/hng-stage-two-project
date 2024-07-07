@@ -87,11 +87,17 @@ const ProductItem = ({ name, price, pic }) => {
       <span className="product-price">{price}</span>
       <div className="item-operations">
         <div>
-          <span onClick={decreaseQuantity} style={{ cursor: "pointer" }}>
+          <span
+            onClick={decreaseQuantity}
+            style={{ cursor: "pointer", paddingLeft: "15%" }}
+          >
             -
           </span>
           <span>{quantity}</span>
-          <span onClick={increaseQuantity} style={{ cursor: "pointer" }}>
+          <span
+            onClick={increaseQuantity}
+            style={{ cursor: "pointer", paddingRight: "15%" }}
+          >
             +
           </span>
         </div>
@@ -143,7 +149,7 @@ const ProductList = () => {
         <ul className="product-heading">
           <li>All Categories</li>
           <li className="perfumes">
-            <span>Perfumes</span>
+            <span style={{ cursor: "pointer" }}>Perfumes</span>
           </li>
           <li>Body Spray</li>
           <li>Deodorants</li>
