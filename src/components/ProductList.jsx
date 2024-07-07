@@ -1,37 +1,75 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { CiMenuBurger } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
-import { FaRegUser } from "react-icons/fa6";
+import { CiMenuBurger, CiSearch } from "react-icons/ci";
+import { FaRegUser, FaFacebook, FaInstagram } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
-import { FaFacebook } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
-import { FaInstagram } from "react-icons/fa";
 
 import "./styles.css";
 
-function ProductList() {
-  const navigate = useNavigate();
+const Header = ({ goToCheckout }) => (
+  <div className="product-header">
+    <div className="product-header-first">
+      <CiMenuBurger />
+      <CiSearch />
+    </div>
+    <div>logo</div>
+    <div className="product-header-last">
+      <FaRegUser />
+      <GiShoppingCart onClick={goToCheckout} />
+    </div>
+  </div>
+);
 
+const ProductItem = ({ name, price }) => (
+  <div className="item">
+    <div className="pic-background"></div>
+    <span className="product-name">{name}</span>
+    <span className="product-price">{price}</span>
+    <div className="item-operations">
+      <div>
+        <span>-</span>
+        <span>1</span>
+        <span>+</span>
+      </div>
+      <span className="addToCart">Add to cart</span>
+    </div>
+  </div>
+);
+
+const ProductList = () => {
+  const navigate = useNavigate();
   const goToCheckout = () => {
     navigate("/checkout");
   };
 
+  const products = [
+    { name: "Coco Noir Chanel", price: "#65,000" },
+    { name: "Channel Eau De Parfum", price: "#45,000" },
+    { name: "Chloe", price: "#37,500" },
+    { name: "Creed", price: "#85,000" },
+    { name: "Zara-Seoul 532-8", price: "#75,000" },
+    { name: "Versace Eros", price: "#105,000" },
+    { name: "Stronger with you", price: "#42,700" },
+    { name: "Roberto Cavalll", price: "#98,000" },
+    { name: "Si", price: "#40,000" },
+    { name: "Amber & Orchid", price: "#80,000" },
+    { name: "Zara wonder rose", price: "#32,000" },
+    { name: "Red diamond", price: "#68,000" },
+    { name: "Givenchy-Eau de moiselle", price: "#120,000" },
+    { name: "D&G", price: "#75,000" },
+    { name: "Coco mademoiselle", price: "#95,000" },
+    { name: "Ice cool vigor-Eau de parfum", price: "#70,000" },
+  ];
+
+  const chunkedProducts = [];
+  for (let i = 0; i < products.length; i += 4) {
+    chunkedProducts.push(products.slice(i, i + 4));
+  }
+
   return (
     <div className="product-list">
-      <div className="product-header">
-        <div className="product-header-first">
-          <CiMenuBurger />
-          <div>
-            <CiSearch />
-          </div>
-        </div>
-        <div>logo</div>
-        <div className="product-header-last">
-          <FaRegUser />
-          <GiShoppingCart onClick={goToCheckout} />
-        </div>
-      </div>
+      <Header goToCheckout={goToCheckout} />
 
       <h5>
         Fragrances that evoke emotions, spark memories and inspire the senses
@@ -43,224 +81,21 @@ function ProductList() {
         <li>Body Spray</li>
         <li>Deodorants</li>
       </ul>
+
       <div className="products-view">
-        <div className="products">
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Coco Noir Chanel</span>
-            <span className="product-price">#65,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
+        {chunkedProducts.map((productGroup, index) => (
+          <div className="products" key={index}>
+            {productGroup.map((product, idx) => (
+              <ProductItem
+                key={idx}
+                name={product.name}
+                price={product.price}
+              />
+            ))}
           </div>
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Channel Eau De Parfum</span>
-            <span className="product-price">#45,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Chloe</span>
-            <span className="product-price">#37,500</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Creed</span>
-            <span className="product-price">#85,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-        </div>
-        <div className="products">
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Zara-Seoul 532-8</span>
-            <span className="product-price">#75,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Versace Eros</span>
-            <span className="product-price">#105,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Stronger with you</span>
-            <span className="product-price">#42,700</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Roberto Cavalll</span>
-            <span className="product-price">#98,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-        </div>
-        <div className="products">
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Si</span>
-            <span className="product-price">#40,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Amber & Orchid</span>
-            <span className="product-price">#80,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Zara wonder rose</span>
-            <span className="product-price">#32,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Red diamond</span>
-            <span className="product-price">#68,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-        </div>
-        <div className="products">
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Givenchy-Eau de moiselle</span>
-            <span className="product-price">#120,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">D&G</span>
-            <span className="product-price">#75,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Coco mademoiselle</span>
-            <span className="product-price">#95,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>{" "}
-          <div className="item">
-            <div className="pic-background"></div>
-            <span className="product-name">Ice cool vigor-Eau de parfum</span>
-            <span className="product-price">#70,000</span>
-            <div className="item-operations">
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <span className="addToCart">Add to cart</span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+
       <div className="product-footer">
         <div>logo</div>
         <div>
@@ -272,6 +107,6 @@ function ProductList() {
       </div>
     </div>
   );
-}
+};
 
 export default ProductList;

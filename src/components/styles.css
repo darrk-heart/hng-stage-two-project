@@ -1,40 +1,56 @@
-/* product list page */
+:root {
+  --border-color: black;
+  --border-radius: 3px;
+  --font-size-small: 0.6rem;
+  --font-size-medium: 0.7rem;
+  --font-size-large: 0.8rem;
+  --background-color: red;
+  --text-color: white;
+  --highlight-color: red;
+}
+
+/* Product list page */
 .product-header {
   display: flex;
   justify-content: space-between;
 }
+
 .product-header-first {
   display: flex;
   width: 35%;
   justify-content: space-between;
 }
+
 .product-header-first div {
-  border: 1px solid black;
-  border-radius: 3px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   width: 70%;
   justify-content: flex-end;
   display: flex;
 }
+
 .product-header-last {
   display: flex;
   width: 13%;
   justify-content: space-between;
 }
+
 h5 {
   text-align: center;
 }
+
 .product-heading {
   list-style-type: none;
   padding: 0;
   display: flex;
   justify-content: space-between;
-  font-size: 0.7rem;
+  font-size: var(--font-size-medium);
 }
-.perfumes {
-  border-bottom: 2px solid red;
+
+.product-heading .perfumes {
+  border-bottom: 2px solid var(--highlight-color);
 }
-.products-view {
-}
+
 .products {
   display: flex;
   justify-content: space-between;
@@ -47,47 +63,55 @@ h5 {
   justify-content: space-between;
   width: 23%;
 }
+
 .pic-background {
-  background-color: red;
+  background-color: var(--background-color);
   width: 100%;
   height: 100px;
   border-radius: 10px;
 }
+
 .item-operations {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .item-operations div {
-  border: 1px solid red;
-  border-radius: 3px;
-  font-size: 0.6rem;
+  border: 1px solid var(--highlight-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
   width: 40%;
   display: flex;
   justify-content: space-between;
 }
+
 .product-name {
-  font-size: 0.6rem;
+  font-size: var(--font-size-small);
 }
+
 .product-price {
-  font-size: 0.7rem;
+  font-size: var(--font-size-medium);
   font-weight: 600;
 }
+
 .addToCart {
   font-size: 0.5rem;
   background-color: black;
-  color: white;
+  color: var(--text-color);
   border-radius: 10px;
 }
+
 .product-footer {
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
 }
+
 .product-footer div {
   width: 40%;
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: var(--font-size-large);
   align-items: center;
 }
