@@ -32,6 +32,18 @@ const Header = ({ goToCheckout }) => (
   </div>
 );
 
+const Footer = () => (
+  <div className="product-footer">
+    <div>logo</div>
+    <div>
+      <span>Follow us</span>
+      <FaFacebook size={20} />
+      <RiTwitterXFill size={20} />
+      <FaInstagram size={20} />
+    </div>
+  </div>
+);
+
 const ProductItem = ({ name, price }) => (
   <div className="item">
     <div className="pic-background"></div>
@@ -74,36 +86,66 @@ const ProductList = () => {
   ];
 
   return (
-    <div className="product-list">
-      <Header goToCheckout={goToCheckout} />
+    <>
+      <div className="product-list">
+        <Header goToCheckout={goToCheckout} />
 
-      <h5>
-        Fragrances that evoke emotions, spark memories and inspire the senses
-      </h5>
+        <h5>
+          Fragrances that evoke emotions, spark memories and inspire the senses
+        </h5>
 
-      <ul className="product-heading">
-        <li>All Categories</li>
-        <li className="perfumes">Perfumes</li>
-        <li>Body Spray</li>
-        <li>Deodorants</li>
-      </ul>
+        <ul className="product-heading">
+          <li>All Categories</li>
+          <li className="perfumes">Perfumes</li>
+          <li>Body Spray</li>
+          <li>Deodorants</li>
+        </ul>
 
-      <div className="products-view">
-        {products.map((product, idx) => (
-          <ProductItem key={idx} name={product.name} price={product.price} />
-        ))}
+        <div className="products-view">
+          {products.map((product, idx) => (
+            <ProductItem key={idx} name={product.name} price={product.price} />
+          ))}
+        </div>
+        <Footer />
       </div>
-
-      <div className="product-footer">
-        <div>logo</div>
+      <div className="tablet-view-footer">
         <div>
-          <span>Follow us</span>
-          <FaFacebook size={20} />
-          <RiTwitterXFill size={20} />
-          <FaInstagram size={20} />
+          <div>logo</div>
+          <div>
+            <span>Follow us</span>
+            <FaFacebook size={20} />
+            <RiTwitterXFill size={20} />
+            <FaInstagram size={20} />
+          </div>
+        </div>
+        <div>
+          <h4>Our Vision</h4>
+          <span>
+            Fragrance Fusion is dedicated to providing an exceptional perfume
+            shopping experience, offering a curated selection of premium
+            fragrances from around the world. We aim to inspire our customers to
+            discover new scents and explore their personal style
+          </span>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <h6>About Us</h6>
+          <h6>Contact Us</h6>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <h6>Shipping & Delivery</h6>
+          <h6>Fragrance Recommendation</h6>
+        </div>
+        <div>
+          <h4>My Account</h4>
+          <h6>My Profile</h6>
+          <h6>My Cart</h6>
+          <h6>Checkout</h6>
+          <h6>Track Order</h6>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
