@@ -35,6 +35,16 @@
   width: 13%;
   justify-content: space-between;
 }
+.input-field {
+  font-size: 0.6rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+.input-field:focus {
+  outline: none;
+}
 
 h5 {
   text-align: center;
@@ -127,11 +137,23 @@ h5 {
   height: 163px;
   border-radius: 120px 120px 0 0;
   padding: 30px 40px;
+  justify-content: space-between;
 }
 .tablet-view-footer div {
-  width: 20%;
   display: flex;
   flex-direction: column;
+}
+.follow {
+  width: 20%;
+  margin-left: 50px;
+}
+.vision {
+  width: 40%;
+}
+.info,
+.services,
+.account {
+  width: 15%;
 }
 
 /* responsiveness for bigger screens */
@@ -148,6 +170,16 @@ h5 {
   .product-footer {
     display: none;
   }
+
+  .input-field {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+    background-color: inherit;
+    color: white;
+  }
+
   .product-header-first div {
     height: 40px;
     font-size: 2rem;

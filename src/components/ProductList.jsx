@@ -13,13 +13,14 @@ const Header = ({ goToCheckout }) => (
       <div className="product-header-first">
         <CiMenuBurger className="menu-icon" />
         <div>
+          <input className="input-field" type="text" />
           <CiSearch />
         </div>
       </div>
       <div>logo</div>
       <div className="product-header-last">
         <FaRegUser />
-        <GiShoppingCart onClick={goToCheckout} />
+        <GiShoppingCart style={{ cursor: "pointer" }} onClick={goToCheckout} />
       </div>
     </div>
     <div className="tablet-view-menu">
@@ -108,7 +109,7 @@ const ProductList = () => {
         <Footer />
       </div>
       <div className="tablet-view-footer">
-        <div>
+        <div className="follow">
           <div>logo</div>
           <div>
             <span>Follow us</span>
@@ -117,7 +118,7 @@ const ProductList = () => {
             <FaInstagram size={20} />
           </div>
         </div>
-        <div>
+        <div className="vision">
           <h4>Our Vision</h4>
           <span>
             Fragrance Fusion is dedicated to providing <br />
@@ -128,17 +129,17 @@ const ProductList = () => {
             new scents and explore their personal style
           </span>
         </div>
-        <div>
+        <div className="info">
           <h4>Information</h4>
           <span>About Us</span>
           <span>Contact Us</span>
         </div>
-        <div>
+        <div className="services">
           <h4>Our Services</h4>
           <span>Shipping & Delivery</span>
           <span>Fragrance Recommendation</span>
         </div>
-        <div>
+        <div className="account">
           <h4>My Account</h4>
           <span>My Profile</span>
           <span>My Cart</span>
