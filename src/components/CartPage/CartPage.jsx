@@ -9,10 +9,13 @@ import coco from "../../assets/products/coco.png";
 import creed from "../../assets/products/creed.png";
 import red from "../../assets/products/red.png";
 
-function Checkout({}) {
+function CartPage({}) {
   const navigate = useNavigate();
   const goToProductList = () => {
-    navigate("/productlist");
+    navigate("/");
+  };
+  const goToCheckout = () => {
+    navigate("/checkout");
   };
   const [quantities, setQuantities] = useState({
     coco: 1,
@@ -136,12 +139,12 @@ function Checkout({}) {
       <div className="cartpage-footer">
         <div className="view">View Cart</div>
         <div className="checkout">
-          <span>Checkout</span>
-          <GrLinkNext />
+          <span onClick={goToCheckout}>Checkout</span>
+          <GrLinkNext onClick={goToCheckout} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Checkout;
+export default CartPage;

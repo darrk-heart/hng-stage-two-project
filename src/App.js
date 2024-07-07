@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProductList from "./components/ProductList/ProductList";
 import CartPage from "./components/CartPage/CartPage";
-import Payment from "./components/Payment";
+import Checkout from "./components/Checkout/Checkout";
 import "./App.css";
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/productlist" element={<ProductList />} />
+          <Route path="/" element={<ProductList />} />
           <Route path="/cartpage" element={<CartPage />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
     </Router>
