@@ -142,7 +142,9 @@ const ProductList = () => {
 
         <ul className="product-heading">
           <li>All Categories</li>
-          <li className="perfumes">Perfumes</li>
+          <li className="perfumes">
+            <span>Perfumes</span>
+          </li>
           <li>Body Spray</li>
           <li>Deodorants</li>
         </ul>
@@ -161,12 +163,22 @@ const ProductList = () => {
       </div>
       <div className="tablet-view-footer">
         <div className="follow">
-          <div>logo</div>
+          <div>
+            <img className="logos" src={logo} alt="logo" />
+          </div>
           <div>
             <span>Follow us</span>
-            <FaFacebook size={20} />
-            <RiTwitterXFill size={20} />
-            <FaInstagram size={20} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginTop: "5px",
+              }}
+            >
+              <FaFacebook size={20} />
+              <RiTwitterXFill size={20} />
+              <FaInstagram size={20} />
+            </div>
           </div>
         </div>
         <div className="vision">

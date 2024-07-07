@@ -153,12 +153,15 @@ h5 {
   background-color: #fef6f1;
   height: 163px;
   border-radius: 120px 120px 0 0;
-  padding: 30px 40px;
+  padding: 20px 40px;
   justify-content: space-between;
 }
 .tablet-view-footer div {
   display: flex;
   flex-direction: column;
+}
+h4 {
+  margin: 0;
 }
 .follow {
   width: 20%;
@@ -176,6 +179,9 @@ h5 {
 /* responsiveness for bigger screens */
 
 @media (min-width: 768px) {
+  .perfumes span {
+    border-bottom: 2px solid rgb(86, 78, 78);
+  }
   .productheader {
     background-color: #fef6f1;
     padding: 40px;
@@ -190,9 +196,17 @@ h5 {
   .icons {
     font-size: 24px;
   }
-
   .logo {
     height: 40px;
+  }
+  .logos {
+    height: 60px;
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  .pic-background img {
+    height: auto;
+    width: 70%;
   }
   .input-field {
     padding: 10px;
@@ -250,8 +264,8 @@ h5 {
     width: 50%;
   }
   .addToCart {
-    font-size: 14px;
-    padding: 3px;
+    font-size: 11px;
+    padding: 4px;
   }
 }
 
