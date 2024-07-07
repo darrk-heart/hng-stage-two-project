@@ -133,7 +133,6 @@ h5 {
   width: 30%;
 }
 
-
 /* responsiveness for bigger screens */
 
 @media (min-width: 768px) {
@@ -150,7 +149,8 @@ h5 {
   .product-header-last {
     width: 70px;
   }
-  .tablet-view-menu {
+  .tablet-view-menu,
+  .tablet-view-footer {
     display: block;
     display: flex;
   }
@@ -188,10 +188,6 @@ h5 {
   .addToCart {
     font-size: 0.7rem;
     padding: 3px;
-  }
-  .tablet-view-footer {
-    display: block;
-    display: flex;
   }
 }
 
