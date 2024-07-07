@@ -8,17 +8,26 @@ import { RiTwitterXFill } from "react-icons/ri";
 import "./styles.css";
 
 const Header = ({ goToCheckout }) => (
-  <div className="product-header">
-    <div className="product-header-first">
-      <CiMenuBurger className="menu-icon" />
-      <div>
-        <CiSearch />
+  <div className="productheader">
+    <div className="product-header">
+      <div className="product-header-first">
+        <CiMenuBurger className="menu-icon" />
+        <div>
+          <CiSearch />
+        </div>
+      </div>
+      <div>logo</div>
+      <div className="product-header-last">
+        <FaRegUser />
+        <GiShoppingCart onClick={goToCheckout} />
       </div>
     </div>
-    <div>logo</div>
-    <div className="product-header-last">
-      <FaRegUser />
-      <GiShoppingCart onClick={goToCheckout} />
+    <div className="tablet-view-menu">
+      <span>About Us</span>
+      <span>Brands</span>
+      <span>Sales & Offers</span>
+      <span>Wholesale</span>
+      <span>FAQ</span>
     </div>
   </div>
 );

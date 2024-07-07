@@ -1,4 +1,9 @@
 /* product list page */
+.productheader {
+  padding: 0;
+  margin: 0;
+}
+
 .product-header {
   display: flex;
   justify-content: space-between;
@@ -9,6 +14,9 @@
   width: 35%;
   justify-content: space-between;
 }
+.tablet-view-menu {
+  display: none;
+}
 
 .product-header-first div {
   border: 1px solid black;
@@ -16,6 +24,7 @@
   width: 70%;
   justify-content: flex-end;
   display: flex;
+  align-items: center;
 }
 
 .product-header-last {
@@ -46,7 +55,6 @@ h5 {
   gap: 10px;
   justify-content: space-between;
 }
-
 .item {
   flex: 1 1 calc(25% - 10px); /* Four items per row on mobile */
   display: flex;
@@ -106,4 +114,37 @@ h5 {
   justify-content: space-between;
   font-size: 0.8rem;
   align-items: center;
+}
+
+/* responsiveness for bigger screens */
+
+@media (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+  .product-header-first div {
+    height: 30px;
+  }
+  .product-header-last {
+    width: 70px;
+  }
+  .tablet-view-menu {
+    display: block;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 20px;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  .product-heading {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .product-heading li {
+    width: 22%;
+  }
+  .perfumes {
+    border-bottom: none;
+  }
 }
