@@ -10,8 +10,10 @@ import "./styles.css";
 const Header = ({ goToCheckout }) => (
   <div className="product-header">
     <div className="product-header-first">
-      <CiMenuBurger />
-      <CiSearch />
+      <CiMenuBurger className="menu-icon" />
+      <div>
+        <CiSearch />
+      </div>
     </div>
     <div>logo</div>
     <div className="product-header-last">
@@ -62,11 +64,6 @@ const ProductList = () => {
     { name: "Ice cool vigor-Eau de parfum", price: "#70,000" },
   ];
 
-  const chunkedProducts = [];
-  for (let i = 0; i < products.length; i += 4) {
-    chunkedProducts.push(products.slice(i, i + 4));
-  }
-
   return (
     <div className="product-list">
       <Header goToCheckout={goToCheckout} />
@@ -83,16 +80,8 @@ const ProductList = () => {
       </ul>
 
       <div className="products-view">
-        {chunkedProducts.map((productGroup, index) => (
-          <div className="products" key={index}>
-            {productGroup.map((product, idx) => (
-              <ProductItem
-                key={idx}
-                name={product.name}
-                price={product.price}
-              />
-            ))}
-          </div>
+        {products.map((product, idx) => (
+          <ProductItem key={idx} name={product.name} price={product.price} />
         ))}
       </div>
 
