@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  /* font-family: 'Courier New', Courier, monospace; */
   padding: 20px;
 }
 
