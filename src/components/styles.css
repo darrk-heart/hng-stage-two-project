@@ -162,7 +162,7 @@ h5 {
     display: flex;
   }
   h5 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .product-heading {
     font-size: 1rem;
@@ -202,5 +202,12 @@ h5 {
   .item {
     flex: 1 1 calc(12.5% - 10px);
     max-width: calc(12.5% - 10px);
+  }
+}
+
+@media (max-width: 350px) {
+  .item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
   }
 }
