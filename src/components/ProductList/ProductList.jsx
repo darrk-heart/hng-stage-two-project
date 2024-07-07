@@ -5,25 +5,25 @@ import { FaRegUser, FaFacebook, FaInstagram } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 import { RiTwitterXFill } from "react-icons/ri";
 
-import logo from "../assets/F.png";
-import coco from "../assets/products/coco.png";
-import channel from "../assets/products/chanel.png";
-import amber from "../assets/products/amber.png";
-import cocomadem from "../assets/products/coco madem.png";
-import creed from "../assets/products/creed.png";
-import dng from "../assets/products/dng.png";
-import si from "../assets/products/si.png";
-import strong from "../assets/products/stronger.png";
-import versace from "../assets/products/versace.png";
-import zara from "../assets/products/zara.png";
-import zarawonder from "../assets/products/zarawonder.png";
-import red from "../assets/products/red.png";
-import roberto from "../assets/products/roberto.png";
-import ice from "../assets/products/ice cool.png";
-import givenchy from "../assets/products/givenchy.png";
-import chloe from "../assets/products/chloe.png";
+import logo from "../../assets/F.png";
+import coco from "../../assets/products/coco.png";
+import channel from "../../assets/products/chanel.png";
+import amber from "../../assets/products/amber.png";
+import cocomadem from "../../assets/products/coco madem.png";
+import creed from "../../assets/products/creed.png";
+import dng from "../../assets/products/dng.png";
+import si from "../../assets/products/si.png";
+import strong from "../../assets/products/stronger.png";
+import versace from "../../assets/products/versace.png";
+import zara from "../../assets/products/zara.png";
+import zarawonder from "../../assets/products/zarawonder.png";
+import red from "../../assets/products/red.png";
+import roberto from "../../assets/products/roberto.png";
+import ice from "../../assets/products/ice cool.png";
+import givenchy from "../../assets/products/givenchy.png";
+import chloe from "../../assets/products/chloe.png";
 
-import "./styles.css";
+import "./ProductList.css";
 
 const Header = ({ goToCheckout }) => (
   <div className="productheader">
