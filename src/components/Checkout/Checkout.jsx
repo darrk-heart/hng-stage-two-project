@@ -1,15 +1,20 @@
 import React from "react";
 import { GrLinkPrevious } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 import "./Checkout.css";
 
 function Checkout() {
+  const navigate = useNavigate();
+  const goToCartPage = () => {
+    navigate("/cartpage");
+  };
   return (
     <div>
       <div className="checkout-header">
-        <GrLinkPrevious />
+        <GrLinkPrevious onClick={goToCartPage} style={{ cursor: "pointer" }} />
         <span>Checkout</span>
-        <span style={{ color: "white" }}>hello</span>
+        <span style={{ color: "white" }}>he</span>
       </div>
       <div className="checkout-content">
         <span>Delivery address</span>
@@ -34,7 +39,9 @@ function Checkout() {
           <span>#227,300</span>
         </div>
       </div>
-      <div className="payment">Make Payment</div>
+      <div className="payment">
+        <span className="pay">Make Payment</span>
+      </div>
     </div>
   );
 }
