@@ -167,12 +167,14 @@ h4 {
   margin-left: 50px;
 }
 .vision {
-  width: 40%;
+  width: 34%;
 }
 .info,
-.services,
 .account {
   width: 15%;
+}
+.services {
+  width: 20%;
 }
 
 /* responsiveness for bigger screens */
@@ -197,6 +199,7 @@ h4 {
   }
   .logo {
     height: 40px;
+    margin-left: -370px;
   }
   .logos {
     height: 60px;

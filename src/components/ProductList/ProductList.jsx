@@ -178,12 +178,13 @@ const ProductList = () => {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                marginTop: "5px",
+                marginTop: "10px",
+                alignItems: "center",
               }}
             >
-              <FaFacebook size={20} />
-              <RiTwitterXFill size={20} />
-              <FaInstagram size={20} />
+              <FaFacebook style={{ paddingRight: "10px" }} size={20} />
+              <RiTwitterXFill style={{ paddingRight: "10px" }} size={21} />
+              <FaInstagram style={{ paddingRight: "10px" }} size={21} />
             </div>
           </div>
         </div>
@@ -206,7 +207,10 @@ const ProductList = () => {
         <div className="services">
           <h4>Our Services</h4>
           <span>Shipping & Delivery</span>
-          <span>Fragrance Recommendation</span>
+          <span>
+            Fragrance
+            <br /> Recommendation
+          </span>
         </div>
         <div className="account">
           <h4>My Account</h4>
