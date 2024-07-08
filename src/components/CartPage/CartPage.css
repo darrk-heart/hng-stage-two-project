@@ -50,5 +50,12 @@
   padding: 15px 25px;
   color: white;
   display: flex;
-  align-items: center; cursor: pointer;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cartpage {
+    margin: 40px;
+  }
 }

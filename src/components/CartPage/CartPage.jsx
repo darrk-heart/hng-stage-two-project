@@ -38,9 +38,12 @@ function CartPage() {
   };
 
   return (
-    <div>
+    <div className="cartpage">
       <div className="cartpage-header">
-        <GrLinkPrevious onClick={goToProductList} />
+        <GrLinkPrevious
+          onClick={goToProductList}
+          style={{ cursor: "pointer" }}
+        />
         <span>Shopping Bag</span>
       </div>
       <div style={{ marginTop: "40px" }}>
