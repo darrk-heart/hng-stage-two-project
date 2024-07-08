@@ -50,5 +50,5 @@
   padding: 15px 25px;
   color: white;
   display: flex;
-  align-items: center;
+  align-items: center; cursor: pointer;
 }

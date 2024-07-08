@@ -139,8 +139,10 @@ function CartPage({}) {
       <div className="cartpage-footer">
         <div className="view">View Cart</div>
         <div className="checkout">
-          <span onClick={goToCheckout}>Checkout</span>
-          <GrLinkNext onClick={goToCheckout} />
+          <span style={{ cursor: "pointer" }} onClick={goToCheckout}>
+            Checkout
+          </span>
+          <GrLinkNext style={{ cursor: "pointer" }} onClick={goToCheckout} />
         </div>
       </div>
     </div>
