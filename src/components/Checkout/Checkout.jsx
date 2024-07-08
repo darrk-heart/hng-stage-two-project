@@ -12,7 +12,11 @@ function Checkout() {
   return (
     <div className="checkout-page">
       <div className="checkout-header">
-        <GrLinkPrevious onClick={goToCartPage} style={{ cursor: "pointer" }} />
+        <GrLinkPrevious
+          className="prev"
+          onClick={goToCartPage}
+          style={{ cursor: "pointer" }}
+        />
         <span style={{ fontWeight: "700" }} className="check">
           Checkout
         </span>
