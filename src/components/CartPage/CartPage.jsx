@@ -9,7 +9,7 @@ import coco from "../../assets/products/coco.png";
 import creed from "../../assets/products/creed.png";
 import red from "../../assets/products/red.png";
 
-function CartPage({}) {
+function CartPage() {
   const navigate = useNavigate();
   const goToProductList = () => {
     navigate("/");
