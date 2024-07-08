@@ -10,11 +10,13 @@ function Checkout() {
     navigate("/cartpage");
   };
   return (
-    <div>
+    <div className="checkout-page">
       <div className="checkout-header">
         <GrLinkPrevious onClick={goToCartPage} style={{ cursor: "pointer" }} />
-        <span>Checkout</span>
-        <span style={{ color: "white" }}>he</span>
+        <span style={{ fontWeight: "700" }} className="check">
+          Checkout
+        </span>
+        <span style={{ color: "white" }}>h</span>
       </div>
       <div className="checkout-content">
         <span>Delivery address</span>

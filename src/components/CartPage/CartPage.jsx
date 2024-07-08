@@ -41,10 +41,17 @@ function CartPage() {
     <div className="cartpage">
       <div className="cartpage-header">
         <GrLinkPrevious
+          className="prev"
           onClick={goToProductList}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", color: "#333333" }}
         />
-        <span>Shopping Bag</span>
+        <div style={{ display: "flex" }}>
+          <span>Shopping Bag</span>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <span className="three">3</span>
+            <span style={{ color: "white" }}>3</span>
+          </div>
+        </div>
       </div>
       <div style={{ marginTop: "40px" }}>
         <div className="row">
@@ -57,21 +64,21 @@ function CartPage() {
               <span style={{ fontWeight: "bold" }}>#65,000</span>
               <div>
                 <span
-                  style={{ paddingLeft: "15%" }}
+                  style={{ paddingLeft: "15%", cursor: "pointer" }}
                   onClick={() => handleDecrement("coco")}
                 >
                   -
                 </span>
                 <span>{quantities.coco}</span>
                 <span
-                  style={{ paddingRight: "15%" }}
+                  style={{ paddingRight: "15%", cursor: "pointer" }}
                   onClick={() => handleIncrement("coco")}
                 >
                   +
                 </span>
               </div>
             </div>
-            <div>
+            <div className="close">
               <IoClose />
             </div>
           </div>
@@ -86,21 +93,21 @@ function CartPage() {
               <span style={{ fontWeight: "bold" }}>#68,000</span>
               <div>
                 <span
-                  style={{ paddingLeft: "15%" }}
+                  style={{ paddingLeft: "15%", cursor: "pointer" }}
                   onClick={() => handleDecrement("red")}
                 >
                   -
                 </span>
                 <span>{quantities.red}</span>
                 <span
-                  style={{ paddingRight: "15%" }}
+                  style={{ paddingRight: "15%", cursor: "pointer" }}
                   onClick={() => handleIncrement("red")}
                 >
                   +
                 </span>
               </div>
             </div>
-            <div>
+            <div className="close">
               <IoClose />
             </div>
           </div>
@@ -115,21 +122,21 @@ function CartPage() {
               <span style={{ fontWeight: "bold" }}>#85,000</span>
               <div>
                 <span
-                  style={{ paddingLeft: "15%" }}
+                  style={{ paddingLeft: "15%", cursor: "pointer" }}
                   onClick={() => handleDecrement("creed")}
                 >
                   -
                 </span>
                 <span>{quantities.creed}</span>
                 <span
-                  style={{ paddingRight: "15%" }}
+                  style={{ paddingRight: "15%", cursor: "pointer" }}
                   onClick={() => handleIncrement("creed")}
                 >
                   +
                 </span>
               </div>
             </div>
-            <div>
+            <div className="close">
               <IoClose />
             </div>
           </div>
@@ -145,7 +152,11 @@ function CartPage() {
           <span style={{ cursor: "pointer" }} onClick={goToCheckout}>
             Checkout
           </span>
-          <GrLinkNext style={{ cursor: "pointer" }} onClick={goToCheckout} />
+          <GrLinkNext
+            className="prev"
+            style={{ cursor: "pointer", paddingLeft: "5px" }}
+            onClick={goToCheckout}
+          />
         </div>
       </div>
     </div>
