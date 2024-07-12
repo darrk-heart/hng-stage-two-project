@@ -16,7 +16,7 @@ A frontend design of a mini jewellery shopping site
 
 ## UI
 
-Use the Link: https://hng-stage-two-project-jpfl7xm73-darrk-hearts-projects.vercel.app/
+https://hng-stage-two-project-jpfl7xm73-darrk-hearts-projects.vercel.app/
 
 ## License
 
