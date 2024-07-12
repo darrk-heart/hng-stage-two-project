@@ -14,10 +14,6 @@ A frontend design of a mini jewellery shopping site
 
 - React and its counterparts
 
-## UI
-
-https://hng-stage-two-project-jpfl7xm73-darrk-hearts-projects.vercel.app/
-
 ## License
 
 This project is licensed under [MIT LICENSE](LICENSE).
