@@ -1,28 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiMenuBurger, CiSearch } from "react-icons/ci";
 import { FaRegUser, FaFacebook, FaInstagram } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 import { RiTwitterXFill } from "react-icons/ri";
-
-import logo from "../../assets/F.png";
-import coco from "../../assets/products/coco.png";
-import channel from "../../assets/products/chanel.png";
-import amber from "../../assets/products/amber.png";
-import cocomadem from "../../assets/products/coco madem.png";
-import creed from "../../assets/products/creed.png";
-import dng from "../../assets/products/dng.png";
-import si from "../../assets/products/si.png";
-import strong from "../../assets/products/stronger.png";
-import versace from "../../assets/products/versace.png";
-import zara from "../../assets/products/zara.png";
-import zarawonder from "../../assets/products/zarawonder.png";
-import red from "../../assets/products/red.png";
-import roberto from "../../assets/products/roberto.png";
-import ice from "../../assets/products/ice cool.png";
-import givenchy from "../../assets/products/givenchy.png";
-import chloe from "../../assets/products/chloe.png";
-
+import logo from "../../assets/F.png"; // Default image if no product image is available
 import "./ProductList.css";
 
 const Header = ({ goToCartPage }) => (
@@ -115,24 +97,29 @@ const ProductList = () => {
     navigate("/cartpage");
   };
 
-  const products = [
-    { name: "Coco Noir Chanel", price: "#65,000", pic: coco },
-    { name: "Channel Eau De Parfum", price: "#45,000", pic: channel },
-    { name: "Chloe", price: "#37,500", pic: chloe },
-    { name: "Creed", price: "#85,000", pic: creed },
-    { name: "Zara-Seoul 532-8", price: "#75,000", pic: zara },
-    { name: "Versace Eros", price: "#105,000", pic: versace },
-    { name: "Stronger with you", price: "#42,700", pic: strong },
-    { name: "Roberto Cavalll", price: "#98,000", pic: roberto },
-    { name: "Si", price: "#40,000", pic: si },
-    { name: "Amber & Orchid", price: "#80,000", pic: amber },
-    { name: "Zara wonder rose", price: "#32,000", pic: zarawonder },
-    { name: "Red diamond", price: "#68,000", pic: red },
-    { name: "Givenchy-Eau de moiselle", price: "#120,000", pic: givenchy },
-    { name: "D&G", price: "#75,000", pic: dng },
-    { name: "Coco mademoiselle", price: "#95,000", pic: cocomadem },
-    { name: "Ice cool vigor-Eau de parfum", price: "#70,000", pic: ice },
-  ];
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "/api/products/?organization_id=01f381637a7143b8b796fff6c390acbd&reverse_sort=false&page=1&size=10&Appid=" +
+            process.env.REACT_APP_APPID +
+            "&Apikey=" +
+            process.env.REACT_APP_APIKEY,
+          { method: "GET" }
+        );
+        const data = await response.json();
+        setProducts(data.items);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setError(error.message);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <>
@@ -143,7 +130,8 @@ const ProductList = () => {
           <span style={{ color: "#71360C" }}>
             evoke emotions, spark memories
           </span>{" "}
-          and<span style={{ color: "#71360C" }}> inspire the senses</span>
+          and
+          <span style={{ color: "#71360C" }}> inspire the senses</span>
         </h5>
 
         <ul className="product-heading">
@@ -155,13 +143,14 @@ const ProductList = () => {
           <li>Deodorants</li>
         </ul>
 
+        {error && <p>Error fetching products: {error}</p>}
         <div className="products-view">
-          {products.map((product, idx) => (
+          {products.map((product) => (
             <ProductItem
-              key={idx}
+              key={product.id}
               name={product.name}
-              price={product.price}
-              pic={product.pic}
+              price={product.selling_price || "Price not available"}
+              pic={product.product_image[0] || logo} // Replace with default image if no image is available
             />
           ))}
         </div>
